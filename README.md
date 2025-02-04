@@ -27,7 +27,7 @@ Antes de comenzar, asegúrate de tener lo siguiente instalado:
    ```bash
    pip install -r requirements.txt
 
-## ⚙️ Ejecución del proyecto
+## 🛠️ Ejecución del proyecto
 
 2. **Ejecutar el servidor**:   
     ```bash
