@@ -1,6 +1,3 @@
-### **Esquema Entidad-Relación para AppTerio**  
----
-
 ## **1. Entidades**  
 
 ### **Usuarios (`usuarios`)**  
