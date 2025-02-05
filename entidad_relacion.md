@@ -54,30 +54,6 @@
 - `fecha_resolucion` (`DATETIME`, NULLABLE)  
 - `id_cuidador_responsable` (`UUID`, FK → `usuarios.id_usuario`, NULLABLE)   
 
----
-
-### **Datos Experimentales (`datos_experimentales`)**  
-- **PK:** `id_experimento` (`UUID`)  
-- `id_animal` (`UUID`, FK → `animales.id_animal`)  
-- `id_investigador` (`UUID`, FK → `usuarios.id_usuario`)  
-- `tipo_dato` (`STRING`)  
-- `valor` (`TEXT`)  
-- `fecha_registro` (`DATETIME`)  
-
----
-
-### **Gestión de Usuarios y Roles (`roles_usuarios`)**  
-- **PK:** `id_rol` (`UUID`)  
-- `nombre_rol` (`ENUM` → 'cuidador', 'investigador', 'administrador')  
-- `descripcion` (`TEXT`)  
-
----
-
-### **Registro de Actividades (`actividades`)**  
-- **PK:** `id_actividad` (`UUID`)  
-- `id_usuario` (`UUID`, FK → `usuarios.id_usuario`)  
-- `tipo_actividad` (`STRING`)  
-- `fecha_actividad` (`DATETIME`)  
 
 ---
 
@@ -96,7 +72,5 @@
 | `procedimientos` N → 1 `animales` (un animal puede tener múltiples procedimientos) |
 | `solicitudes_animales` 1 → 1 `usuarios` (un cuidador puede aceptar/rechazar una solicitud) |
 | `solicitudes_animales` N → 1 `usuarios` (un investigador puede hacer múltiples solicitudes) |
-| `datos_experimentales` N → 1 `animales` (un animal puede tener múltiples datos experimentales) |
-| `datos_experimentales` N → 1 `usuarios` (un investigador puede registrar múltiples datos) |
-| `roles_usuarios` 1 → N `usuarios` (un rol puede ser asignado a múltiples usuarios) |
-| `actividades` N → 1 `usuarios` (un usuario puede generar múltiples actividades) |
+
+
