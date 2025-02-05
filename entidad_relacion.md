@@ -71,13 +71,6 @@
 - `nombre_rol` (`ENUM` → 'cuidador', 'investigador', 'administrador')  
 - `descripcion` (`TEXT`)  
 
----
-
-### **Registro de Actividades (`actividades`)**  
-- **PK:** `id_actividad` (`UUID`)  
-- `id_usuario` (`UUID`, FK → `usuarios.id_usuario`)  
-- `tipo_actividad` (`STRING`)  
-- `fecha_actividad` (`DATETIME`)  
 
 ---
 
@@ -99,4 +92,4 @@
 | `datos_experimentales` N → 1 `animales` (un animal puede tener múltiples datos experimentales) |
 | `datos_experimentales` N → 1 `usuarios` (un investigador puede registrar múltiples datos) |
 | `roles_usuarios` 1 → N `usuarios` (un rol puede ser asignado a múltiples usuarios) |
-| `actividades` N → 1 `usuarios` (un usuario puede generar múltiples actividades) |
+
