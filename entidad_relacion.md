@@ -14,7 +14,6 @@
 - **PK:** `id_animal` (`UUID`)  
 - `nombre` (`STRING`)  
 - `especie` (`STRING`)  
-- `identificador_unico` (`STRING`, `UNIQUE`)  
 - `estado_salud` (`STRING`)  
 - `peso` (`FLOAT`)  
 - `fecha_nacimiento` (`DATE`)  
