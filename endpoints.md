@@ -1,4 +1,4 @@
-Posibles endpoints que podría tener la API
+Endpoints que expondrá  la API y ejemplos de uso
 
 ---
 
@@ -12,7 +12,7 @@ Posibles endpoints que podría tener la API
 {
   "nombre": "Juan Pérez",
   "email": "juan@example.com",
-  "contraseña": "password123",
+  "contrasena": "password123",
   "rol": "cuidador"
 }
 ```
@@ -54,7 +54,6 @@ Posibles endpoints que podría tener la API
 {
   "nombre": "Ratón A",
   "especie": "Mus musculus",
-  "identificador_unico": "12345",
   "estado_salud": "Saludable",
   "peso": 25.3,
   "fecha_nacimiento": "2023-12-01",
@@ -82,7 +81,10 @@ Posibles endpoints que podría tener la API
   "id_animal": "uuid",
   "nombre": "Ratón A",
   "especie": "Mus musculus",
-  "estado_salud": "Saludable"
+  "estado_salud": "Saludable",
+  "peso": 25.3,
+  "fecha_nacimiento": "2023-12-01",
+  "origen": "Bioterio local"
 }
 ```
 
