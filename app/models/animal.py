@@ -10,7 +10,6 @@ class Animal(Base):
     id_animal = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     nombre = Column(String, nullable=False)
     especie = Column(String, nullable=False)
-    identificador_unico = Column(String, unique=True, nullable=False, index=True)
     estado_salud = Column(String, nullable=False)
     peso = Column(Float, nullable=False)
     fecha_nacimiento = Column(Date, nullable=False)
