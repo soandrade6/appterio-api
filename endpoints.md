@@ -72,6 +72,48 @@ Endpoints que expondrá la API y ejemplos de uso
 ]
 ```
 
+### 📌 **Obtener todos los investigadores**
+
+**GET** `/usuarios/investigadores`
+
+#### **Response**
+
+```json
+[
+  {
+    "id_usuario": "uuid",
+    "nombre": "Juan Pérez",
+    "rol": "investigador",
+  },
+  {
+    "id_usuario": "uuid",
+    "nombre": "María López",
+    "rol": "investigador",
+  }
+]
+```
+
+### 📌 **Obtener todos los cuidadores**
+
+**GET** `/usuarios/cuidadores`
+
+#### **Response**
+
+```json
+[
+  {
+    "id_usuario": "uuid",
+    "nombre": "Juan Pérez",
+    "rol": "cuidador",
+  },
+  {
+    "id_usuario": "uuid",
+    "nombre": "María López",
+    "rol": "cuidador",
+  }
+]
+```
+
 ### 📌 **Editar un usuario**
 
 **PUT** `/usuarios/{user_id}`
@@ -206,6 +248,29 @@ Endpoints que expondrá la API y ejemplos de uso
   "parent2Id": 2,
   "keeperId": 1
 }
+```
+
+### 📌 **Obtener todos los animales vivos**
+
+**GET** `/animales/vivos`
+
+#### **Response**
+
+```json
+[
+  {
+    "id": "uuid",
+    "species": "Raton",
+    "sex": "MACHO",
+    "state": "SALUDABLE"
+  },
+  {
+    "id": "uuid",
+    "species": "Cobaya",
+    "sex": "Hembra",
+    "state": "ENFERMO"
+  }
+]
 ```
 
 ### 📌 **Obtener animales de cuidador por userID**
