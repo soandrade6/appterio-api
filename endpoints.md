@@ -74,7 +74,13 @@ Endpoints que expondrá la API y ejemplos de uso
 
 ### 📌 **Obtener todos los investigadores**
 
-**GET** `/usuarios/investigadores`
+**GET** `/usuarios/?role=investigador`
+
+#### **Params**
+
+```
+role: str
+```
 
 #### **Response**
 
@@ -83,19 +89,29 @@ Endpoints que expondrá la API y ejemplos de uso
   {
     "id_usuario": "uuid",
     "nombre": "Juan Pérez",
+    "email": "juan@example.com",
     "rol": "investigador",
+    "fecha_registro": "2024-02-05T12:00:00"
   },
   {
     "id_usuario": "uuid",
     "nombre": "María López",
+    "email": "maria@example.com",
     "rol": "investigador",
+    "fecha_registro": "2024-02-05T12:00:00"
   }
 ]
 ```
 
 ### 📌 **Obtener todos los cuidadores**
 
-**GET** `/usuarios/cuidadores`
+**GET** `/usuarios/?role=cuidador`
+
+#### **Params**
+
+```
+role: str
+```
 
 #### **Response**
 
@@ -104,12 +120,16 @@ Endpoints que expondrá la API y ejemplos de uso
   {
     "id_usuario": "uuid",
     "nombre": "Juan Pérez",
+    "email": "juan@example.com",
     "rol": "cuidador",
+    "fecha_registro": "2024-02-05T12:00:00"
   },
   {
     "id_usuario": "uuid",
     "nombre": "María López",
+    "email": "maria@example.com",
     "rol": "cuidador",
+    "fecha_registro": "2024-02-05T12:00:00"
   }
 ]
 ```
@@ -122,10 +142,8 @@ Endpoints que expondrá la API y ejemplos de uso
 
 ```json
 {
-  "id_usuario": "uuid",
   "nombre": "Juan Pérez",
   "email": "juan@example.com",
-  "contrasena": "password123",
   "rol": "cuidador"
 }
 ```
@@ -139,6 +157,20 @@ Endpoints que expondrá la API y ejemplos de uso
   "email": "juan@example.com",
   "rol": "cuidador",
   "fecha_registro": "2024-02-05T12:00:00"
+}
+```
+
+---
+
+### 📌 **Eliminar un usuario**
+
+**DELETE** `/usuarios/{user_id}`
+
+#### **Response**
+
+```json
+{
+  "ok": true
 }
 ```
 
@@ -335,7 +367,7 @@ Endpoints que expondrá la API y ejemplos de uso
 ]
 ```
 
-### 📌 **Obtener padres y crias por animalID**
+### 📌 **Obtener padres y crías por animalID**
 
 **GET** `/animales/familia/{animal_id}`
 

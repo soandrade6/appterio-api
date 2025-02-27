@@ -7,9 +7,11 @@ import uuid
 
 router = APIRouter(prefix="/animales", tags=["Animales"])
 
+
 @router.post("/", response_model=AnimalResponse)
 def create_animal_route(animal: AnimalCreate, db: Session = Depends(get_db)):
     return create_animal(db, animal)
+
 
 @router.get("/{animal_id}", response_model=AnimalResponse)
 def get_animal_route(animal_id: uuid.UUID, db: Session = Depends(get_db)):
