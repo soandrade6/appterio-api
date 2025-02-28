@@ -176,31 +176,31 @@ role: str
 
 ---
 
-## **2️⃣ Animales** `/animales`
+## **2️⃣ Animales** `/animal`
 
 ### 📌 **Registrar un animal**
 
-**POST** `/animales/`
+**POST** `/animal/`
 
 #### **Request Body**
 
 ```json
 {
-  "id": "uuid",
-  "species": "Cobaya",
+  "name": "nombre1",  
+  "specie": "Cobaya",
   "sex": "Hembra",
-  "state": "SALUDABLE",
+  "health_status": "SALUDABLE",
   "weight": 750,
-  "age": 10,
+  "date_birth": "2024-02-05",
   "origin": "nacimiento",
   "family": "356A",
-  "dieta": "Dieta controlada con base en pellets comerciales, con un refuerzo de proteínas mediante el suministro ocasional de insectos secos.",
-  "ultimasObservaciones": "Se observa mayor actividad nocturna y una leve reducción en el consumo de alimento. Se continuará monitoreando para detectar posibles cambios en la salud.",
-  "signosClinicos": "Estado general saludable. Se observó una pequeña pérdida de pelo en la zona dorsal, sin signos de infección.",
-  "vacunas": "Rabia, Moquillo, Parvovirus",
-  "parent1Id": 1,
-  "parent2Id": 2,
-  "keeperId": 1
+  "diet": "Dieta controlada con base en pellets comerciales, con un refuerzo de proteínas mediante el suministro ocasional de insectos secos.",
+  "last_observations": "Se observa mayor actividad nocturna y una leve reducción en el consumo de alimento. Se continuará monitoreando para detectar posibles cambios en la salud.",
+  "clinical_signs": "Estado general saludable. Se observó una pequeña pérdida de pelo en la zona dorsal, sin signos de infección.",
+  "vaccines": "Rabia, Moquillo, Parvovirus",
+  "parent1Id": "1",
+  "parent2Id": "2",
+  "keeperId": "c89117c8-00cd-43e2-b163-008254e512e7" #opcional
 }
 ```
 
@@ -208,15 +208,15 @@ role: str
 
 ```json
 {
-  "id_animal": "uuid",
-  "nombre": "Ratón A",
-  "especie": "Mus musculus"
+   "id": "be0b8b88-a565-4fc6-8c83-f02676966bc2",
+   "name": "nombre1",
+   "specie": "Cobaya"
 }
 ```
 
 ### 📌 **Obtener un animal por ID**
 
-**GET** `/animales/detalle/{animal_id}`
+**GET** `/animal/detalle/{id}`
 
 #### **Response**
 
@@ -284,7 +284,7 @@ role: str
 
 ### 📌 **Obtener todos los animales vivos**
 
-**GET** `/animales/vivos`
+**GET** `/animal/alive`
 
 #### **Response**
 
@@ -307,7 +307,7 @@ role: str
 
 ### 📌 **Obtener animales de cuidador por userID**
 
-**GET** `/animales/cuidador/{user_id}`
+**GET** `/animal/cuidador/{user_id}`
 
 #### **Request Body**
 
@@ -338,7 +338,7 @@ role: str
 
 ### 📌 **Obtener animales de investigador por userID**
 
-**GET** `/animales/investigador/{user_id}`
+**GET** `/animal/investigador/{user_id}`
 
 #### **Request Body**
 
@@ -474,21 +474,21 @@ role: str
 
 ---
 
-## **3️⃣ Investigaciones** `/Investigaciones`
+## **3️⃣ Investigaciones** `/research`
 
 ### 📌 **Registrar Investigacion**
 
-**POST** `/investigacion/`
+**POST** `/research/`
 
 #### **Request Body**
 
 ```json
 {
-  "titulo": "Efectos de la dieta en la reproducción de ratones",
-  "descripcion": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
-  "especimen_id": "uuid",
-  "investigador_id": "uuid",
-  "estado": "Abierta"
+  "title": "Efectos de la dieta en la reproducción de ratones",
+  "description": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
+  "specimen_id": "4a01ab95-32e4-4bde-94d0-8e687d1abb2d",
+  "researcher_id": "c89117c8-00cd-43e2-b163-008254e512e7",
+  "status": "Abierta"
 }
 ```
 
@@ -496,11 +496,11 @@ role: str
 
 ```json
 {
-  "titulo": "Efectos de la dieta en la reproducción de ratones",
-  "descripcion": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
-  "especimen_id": "uuid",
-  "investigador_id": "uuid",
-  "estado": "Abierta"
+  "title": "Efectos de la dieta en la reproducción de ratones",
+  "description": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
+  "specimen_id": "4a01ab95-32e4-4bde-94d0-8e687d1abb2d",
+  "researcher_id": "c89117c8-00cd-43e2-b163-008254e512e7",
+  "status": "Abierta"
 }
 ```
 
