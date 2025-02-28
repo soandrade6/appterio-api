@@ -2,20 +2,20 @@ Endpoints que expondrá la API y ejemplos de uso
 
 ---
 
-## **1️⃣ Usuarios** `/usuarios`
+## **1️⃣ Usuarios** `/user`
 
 ### 📌 **Crear un usuario**
 
-**POST** `/usuarios/`
+**POST** `/user/`
 
 #### **Request Body**
 
 ```json
 {
-  "nombre": "Juan Pérez",
+  "name": "Juan Pérez",
   "email": "juan@example.com",
-  "contrasena": "password123",
-  "rol": "cuidador"
+  "password": "password123",
+  "role": "cuidador"
 }
 ```
 
@@ -23,58 +23,58 @@ Endpoints que expondrá la API y ejemplos de uso
 
 ```json
 {
-  "id_usuario": "uuid",
-  "nombre": "Juan Pérez",
-  "email": "juan@example.com",
-  "rol": "cuidador",
-  "fecha_registro": "2024-02-05T12:00:00"
+   "id": "cf1541d8-7b09-40f5-b43e-d80a0fde1a85",
+   "name": "Juan Pérez",
+   "email": "juan@example2.com",
+   "role": "cuidador",
+   "registration_date": "2025-02-27T23:23:30.621402"
 }
 ```
 
 ### 📌 **Obtener un usuario por ID**
 
-**GET** `/usuarios/{user_id}`
+**GET** `/user{id}`
 
 #### **Response**
 
 ```json
 {
-  "id_usuario": "uuid",
-  "nombre": "Juan Pérez",
-  "email": "juan@example.com",
-  "rol": "cuidador",
-  "fecha_registro": "2024-02-05T12:00:00"
+    "id": "cf1541d8-7b09-40f5-b43e-d80a0fde1a85",
+    "name": "Juan Pérez",
+    "email": "juan@example.com",
+    "role": "cuidador",
+    "registration_date": "2025-02-27T23:23:30.621402"
 }
 ```
 
 ### 📌 **Obtener todos los usuarios**
 
-**GET** `/usuarios/`
+**GET** `/user/`
 
 #### **Response**
 
 ```json
 [
   {
-    "id_usuario": "uuid",
-    "nombre": "Juan Pérez",
+    "id": "uuid",
+    "name": "Juan Pérez",
     "email": "juan@example.com",
-    "rol": "cuidador",
-    "fecha_registro": "2024-02-05T12:00:00"
+    "role": "cuidador",
+    "registration_date": "2024-02-05T12:00:00"
   },
   {
-    "id_usuario": "uuid",
-    "nombre": "María López",
+    "id": "uuid",
+    "name": "María López",
     "email": "maria@example.com",
-    "rol": "investigador",
-    "fecha_registro": "2024-02-05T12:00:00"
+    "role": "investigador",
+    "registration_date": "2024-02-05T12:00:00"
   }
 ]
 ```
 
 ### 📌 **Obtener todos los investigadores**
 
-**GET** `/usuarios/?role=investigador`
+**GET** `/user/?role=investigador`
 
 #### **Params**
 
@@ -87,25 +87,25 @@ role: str
 ```json
 [
   {
-    "id_usuario": "uuid",
-    "nombre": "Juan Pérez",
+    "id": "uuid",
+    "name": "Juan Pérez",
     "email": "juan@example.com",
-    "rol": "investigador",
-    "fecha_registro": "2024-02-05T12:00:00"
+    "role": "investigador",
+    "registration_date": "2024-02-05T12:00:00"
   },
   {
-    "id_usuario": "uuid",
-    "nombre": "María López",
+    "id": "uuid",
+    "name": "María López",
     "email": "maria@example.com",
-    "rol": "investigador",
-    "fecha_registro": "2024-02-05T12:00:00"
+    "role": "investigador",
+    "registration_date": "2024-02-05T12:00:00"
   }
 ]
 ```
 
 ### 📌 **Obtener todos los cuidadores**
 
-**GET** `/usuarios/?role=cuidador`
+**GET** `/user/?role=cuidador`
 
 #### **Params**
 
@@ -118,33 +118,33 @@ role: str
 ```json
 [
   {
-    "id_usuario": "uuid",
-    "nombre": "Juan Pérez",
+    "id": "uuid",
+    "name": "Juan Pérez",
     "email": "juan@example.com",
-    "rol": "cuidador",
-    "fecha_registro": "2024-02-05T12:00:00"
+    "role": "cuidador",
+    "registration_date": "2024-02-05T12:00:00"
   },
   {
-    "id_usuario": "uuid",
-    "nombre": "María López",
+    "id": "uuid",
+    "name": "María López",
     "email": "maria@example.com",
-    "rol": "cuidador",
-    "fecha_registro": "2024-02-05T12:00:00"
+    "role": "cuidador",
+    "registration_date": "2024-02-05T12:00:00"
   }
 ]
 ```
 
 ### 📌 **Editar un usuario**
 
-**PUT** `/usuarios/{user_id}`
+**PUT** `/user/{id}`
 
 #### **Request Body**
 
 ```json
 {
-  "nombre": "Juan Pérez",
+  "name": "Juan Pérez",
   "email": "juan@example.com",
-  "rol": "cuidador"
+  "role": "cuidador"
 }
 ```
 
@@ -152,11 +152,11 @@ role: str
 
 ```json
 {
-  "id_usuario": "uuid",
-  "nombre": "Juan Pérez",
+  "id": "uuid",
+  "name": "Juan Pérez",
   "email": "juan@example.com",
-  "rol": "cuidador",
-  "fecha_registro": "2024-02-05T12:00:00"
+  "role": "cuidador",
+  "registration_date": "2024-02-05T12:00:00"
 }
 ```
 
@@ -164,7 +164,7 @@ role: str
 
 ### 📌 **Eliminar un usuario**
 
-**DELETE** `/usuarios/{user_id}`
+**DELETE** `/user/{id}`
 
 #### **Response**
 
