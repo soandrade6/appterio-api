@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 from fastapi import HTTPException
-from app.models.research import Research
-from app.schemas.research import ResearchCreate
+from app.models.research_model import Research
+from app.schemas.research_schema import ResearchCreate
 
 def create_research(db: Session, data: ResearchCreate):
     try:

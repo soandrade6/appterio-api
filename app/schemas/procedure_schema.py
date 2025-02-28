@@ -1,5 +1,5 @@
 from pydantic import BaseModel, UUID4
-from app.schemas.animal import AnimalResponse
+from app.schemas.animal_schema import AnimalResponse
 
 class ProcedureCreate(BaseModel):
     title: str

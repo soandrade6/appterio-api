@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app.database import get_db
-from app.schemas.research import ResearchCreate, ResearchResponse, ResearchUpdateStatus
-from app.services.research import create_research, update_research_status
+from app.schemas.research_schema import ResearchCreate, ResearchResponse, ResearchUpdateStatus
+from app.services.research_service import create_research, update_research_status
 
 router = APIRouter(prefix="/research", tags=["Research"])
 

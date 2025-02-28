@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
-from app.models.user import User
-from app.schemas.user import UserCreate, UserEdit
+from app.models.user_model import User
+from app.schemas.user_schema import UserCreate, UserEdit
 from app.core.security import hash_password
 import uuid
 

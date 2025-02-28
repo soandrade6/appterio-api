@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
-from app.schemas.animal import AnimalCreate, AnimalResponse
-from app.services.animal import create_animal, get_animal
+from app.schemas.animal_schema import AnimalCreate, AnimalResponse
+from app.services.animal_service import create_animal, get_animal
 import uuid
 
 router = APIRouter(prefix="/animal", tags=["Animals"])

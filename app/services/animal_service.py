@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 from fastapi import HTTPException
-from app.models.animal import Animal
-from app.schemas.animal import AnimalCreate
+from app.models.animal_model import Animal
+from app.schemas.animal_schema import AnimalCreate
 import uuid
 
 def create_animal(db: Session, data: AnimalCreate):

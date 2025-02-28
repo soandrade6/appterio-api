@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 from fastapi import HTTPException
 from app.models.procedure_model import Procedure
-from app.models.user import User, UserRole
+from app.models.user_model import User, UserRole
 from app.schemas.procedure_schema import ProcedureCreate
 
 def create_procedure(db: Session, data: ProcedureCreate):
