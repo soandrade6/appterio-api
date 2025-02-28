@@ -474,21 +474,21 @@ role: str
 
 ---
 
-## **3️⃣ Investigaciones** `/Investigaciones`
+## **3️⃣ Investigaciones** `/research`
 
 ### 📌 **Registrar Investigacion**
 
-**POST** `/investigacion/`
+**POST** `/research/`
 
 #### **Request Body**
 
 ```json
 {
-  "titulo": "Efectos de la dieta en la reproducción de ratones",
-  "descripcion": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
-  "especimen_id": "uuid",
-  "investigador_id": "uuid",
-  "estado": "Abierta"
+  "title": "Efectos de la dieta en la reproducción de ratones",
+  "description": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
+  "specimen_id": "4a01ab95-32e4-4bde-94d0-8e687d1abb2d",
+  "researcher_id": "c89117c8-00cd-43e2-b163-008254e512e7",
+  "status": "Abierta"
 }
 ```
 
@@ -496,11 +496,11 @@ role: str
 
 ```json
 {
-  "titulo": "Efectos de la dieta en la reproducción de ratones",
-  "descripcion": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
-  "especimen_id": "uuid",
-  "investigador_id": "uuid",
-  "estado": "Abierta"
+  "title": "Efectos de la dieta en la reproducción de ratones",
+  "description": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
+  "specimen_id": "4a01ab95-32e4-4bde-94d0-8e687d1abb2d",
+  "researcher_id": "c89117c8-00cd-43e2-b163-008254e512e7",
+  "status": "Abierta"
 }
 ```
 
