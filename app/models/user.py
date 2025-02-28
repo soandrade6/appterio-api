@@ -22,3 +22,5 @@ class User(Base):
     registration_date = Column(DateTime, nullable=False, server_default=func.now())
 
     animals = relationship("Animal", back_populates="keeper")
+    researches = relationship("Research", back_populates="researcher")
+    procedures = relationship("Procedure", back_populates="user")

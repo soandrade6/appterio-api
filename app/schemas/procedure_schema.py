@@ -1,23 +1,24 @@
 from pydantic import BaseModel, UUID4
+from app.schemas.animal import AnimalResponse
 
-class ResearchCreate(BaseModel):
+class ProcedureCreate(BaseModel):
     title: str
     description: str
     specimen_id: UUID4
-    researcher_id: UUID4
+    user_id: UUID4
     status: str
 
-class ResearchResponse(ResearchCreate):
+class ProcedureResponse(ProcedureCreate):
     id: UUID4
     title: str
     description: str
-    specimen_id: UUID4
-    researcher_id: UUID4
+    specimen: AnimalResponse 
+    user_id: UUID4
     status: str
 
     class Config:
         from_attributes = True
 
 
-class ResearchUpdateStatus(BaseModel):
+class ProcedureUpdateStatus(BaseModel):
     status: str
