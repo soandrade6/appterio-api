@@ -16,3 +16,7 @@ class ResearchResponse(ResearchCreate):
 
     class Config:
         from_attributes = True
+
+
+class ResearchUpdateStatus(BaseModel):
+    status: str
