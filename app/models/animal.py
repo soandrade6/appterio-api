@@ -19,8 +19,11 @@ class Animal(Base):
     last_observations = Column(String, nullable=False)
     clinical_signs = Column(String, nullable=False)
     vaccines = Column(String, nullable=False)
-    parent1Id = Column(String, nullable=False)
-    parent2Id = Column(String, nullable=False)
-    keeperId = Column(UUID(as_uuid=True), ForeignKey("user.id"), nullable=True)
+    parent1_id = Column(String, nullable=False)
+    parent2_id = Column(String, nullable=False)
+    keeper_id= Column(UUID(as_uuid=True), ForeignKey("user.id"), nullable=True)
 
     keeper = relationship("User", back_populates="animals")
+    procedures = relationship("Procedure", back_populates="specimen")
+    researches = relationship("Research", back_populates="specimen")
+    

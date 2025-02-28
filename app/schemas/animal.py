@@ -14,9 +14,9 @@ class AnimalCreate(BaseModel):
     last_observations: str
     clinical_signs: str
     vaccines: str
-    parent1Id: str
-    parent2Id: str
-    keeperId: UUID | None = None
+    parent1_id: str
+    parent2_id: str
+    keeper_id: UUID | None = None
 
 class AnimalResponse(BaseModel):
     id: UUID
