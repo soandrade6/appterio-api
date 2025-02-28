@@ -3,7 +3,6 @@ from uuid import UUID
 from datetime import datetime
 from enum import Enum
 
-
 class UserRole(str, Enum):
     cuidador = "cuidador"
     investigador = "investigador"
@@ -11,24 +10,24 @@ class UserRole(str, Enum):
 
 
 class UserCreate(BaseModel):
-    nombre: str
+    name: str
     email: EmailStr
-    contrasena: str
-    rol: UserRole
+    password: str
+    role: UserRole
 
 
 class UserResponse(BaseModel):
-    id_usuario: UUID
-    nombre: str
+    id: UUID
+    name: str
     email: EmailStr
-    rol: UserRole
-    fecha_registro: datetime
+    role: UserRole
+    registration_date: datetime
 
     class Config:
         from_attributes = True
 
 
 class UserEdit(BaseModel):
-    nombre: str
+    name: str
     email: EmailStr
-    rol: UserRole
+    role: UserRole

@@ -4,7 +4,6 @@ from sqlalchemy.orm import sessionmaker
 from app.config import DATABASE_URL
 
 engine = create_engine(DATABASE_URL)
-# engine = create_engine("postgresql://postgres:admin@localhost:5432/appterio_db")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Base para modelos

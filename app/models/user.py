@@ -12,13 +12,13 @@ class UserRole(enum.Enum):
     administrador = "administrador"
     
 class User(Base):
-    __tablename__ = "usuarios"
+    __tablename__ = "user"
 
-    id_usuario = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    nombre = Column(String, nullable=False)
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    name = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
-    contrasena = Column(String, nullable=False)
-    rol = Column(Enum(UserRole), nullable=False)
-    fecha_registro = Column(DateTime, nullable=False, server_default=func.now())
+    password = Column(String, nullable=False)
+    role = Column(Enum(UserRole), nullable=False)
+    registration_date = Column(DateTime, nullable=False, server_default=func.now())
 
-    animales = relationship("Animal", back_populates="cuidador")
+    animals = relationship("Animal", back_populates="keeper")
