@@ -506,13 +506,13 @@ role: str
 
 ### 📌 **Actualizar Estado de invesigacion**
 
-**PUT** `/investigacion/{animal_id}`
+**PUT** `/research/{animal_id}`
 
 #### **Request Body**
 
 ```json
 {
-  "estado": "Cerrada"
+  "status": "Cerrada"
 }
 ```
 
@@ -521,7 +521,7 @@ role: str
 ```json
 [
   {
-    "estado": "Abierta"
+    "status": "Cerrada"
   }
 ]
 ```
