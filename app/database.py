@@ -16,7 +16,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-@app.get("/")
-async def root():
-    return {"message": "Bienvenido a AppTerio API"}

@@ -24,5 +24,9 @@ app.include_router(procedure_route.router)
 app.include_router(request_route.router)
 app.include_router(auth_route.router)
 
+@app.get("/")
+async def root():
+    return {"message": "Bienvenido a AppTerio API"}
+
 #Comando para ejecutar la app desde la consola: uvicorn app.main:app --reload
 
