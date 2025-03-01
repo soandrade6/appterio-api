@@ -7,6 +7,7 @@ from app.schemas.procedure_schema import (
     ProcedureCreate,
     ProcedureResponse,
     ProcedureUpdateStatus,
+    ProcedureUser
 )
 from app.services.procedure_service import (
     create_procedure,
@@ -32,10 +33,10 @@ def update_procedure(
     return update_procedure_status(db, id, data.status)
 
 
-@router.get("/researcher/{user_id}", response_model=List[ProcedureResponse])
+@router.get("/researcher/{user_id}", response_model=List[ProcedureUser])
 def get_researcher_procedures(user_id: UUID, db: Session = Depends(get_db)):
     return get_procedures_by_researcher(db, user_id)
 
-@router.get("/keeper/{user_id}", response_model=List[ProcedureResponse])
+@router.get("/keeper/{user_id}", response_model=List[ProcedureUser])
 def get_keeper_procedures(user_id: UUID, db: Session = Depends(get_db)):
     return get_procedures_by_keeper(db, user_id)

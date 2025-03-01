@@ -1,5 +1,5 @@
 from pydantic import BaseModel, UUID4
-# from app.schemas.animal_schema import AnimalProcedureResponse
+from app.schemas.animal_schema import AnimalResponse
 
 class ProcedureCreate(BaseModel):
     title: str
@@ -24,9 +24,9 @@ class ProcedureUpdateStatus(BaseModel):
     status: str
 
 
-# class ProcedureUser(BaseModel):
-#     id: UUID4
-#     title: str
-#     description: str
-#     specimen: AnimalProcedureResponse
-#     status: str
+class ProcedureUser(BaseModel):
+    id: UUID4
+    title: str
+    description: str
+    specimen: AnimalResponse
+    status: str
