@@ -513,21 +513,21 @@ role: str
 
 ---
 
-## **4️⃣ Procedimientos** `/procedimientos`
+## **4️⃣ Procedimientos** `/procedure`
 
 ### 📌 **Registrar un procedimiento**
 
-**POST** `/procedimientos/`
+**POST** `/procedure/`
 
 #### **Request Body**
 
 ```json
 {
-  "id_animal": "uuid",
-  "titulo": "Extracción de sangre",
-  "descripcion": "Toma de muestra para análisis genético",
-  "estado": "pendiente",
-  "investigador_id": "uuid"
+  "specimen_id": "660e8400-e29b-41d4-a716-556655440001",
+  "title": "Vacunación anual",
+  "description": "Aplicación de vacuna contra la rabia.",
+  "user_id": "550e8400-e29b-41d4-a716-446655440001",
+  "status": "Pendiente"
 }
 ```
 
@@ -535,24 +535,24 @@ role: str
 
 ```json
 {
-  "id_procedimiento": "uuid",
-  "id_animal": "uuid",
-  "titulo": "Extracción de sangre",
-  "descripcion": "Toma de muestra para análisis genético",
-  "estado": "pendiente",
-  "investigador_id": "uuid"
+    "title": "Vacunación anual",
+    "description": "Aplicación de vacuna contra la rabia.",
+    "specimen_id": "660e8400-e29b-41d4-a716-556655440001",
+    "user_id": "550e8400-e29b-41d4-a716-446655440001",
+    "status": "Pendiente",
+    "id": "d0c24889-5d82-4523-b222-b0c7b033b551"
 }
 ```
 
 ### 📌 **Actualizar estado de procedimiento**
 
-**PUT** `/procedimientos/{procedimiento_id}`
+**PUT** `/procedure/{id}`
 
 #### **Request Body**
 
 ```json
 {
-  "estado": "Hecho"
+  "status": "Hecho"
 }
 ```
 
@@ -560,23 +560,23 @@ role: str
 
 ```json
 {
-  "estado": "Hecho"
+  "status": "Hecho"
 }
 ```
 
 ### 📌 **Obtener todos los procedimientos de investigador por user_id**
 
-**GET** `/procedimientos/investigador/{user_id}`
+**GET** `/procedure/researcher/{user_id}`
 
 #### **Response**
 
 ```json
 {
-  "id_procedimiento": "uuid",
-  "titulo": "Extracción de sangre",
-  "descripcion": "Toma de muestra para análisis genético",
-  "estado": "pendiente",
-  "specimen": {
+  "id": "uuid",
+  "title": "Extracción de sangre",
+  "description": "Toma de muestra para análisis genético",
+  "status": "pendiente",
+  "specimen": { // Falta esto
     "id": "uuid",
     "species": "Raton",
     "sex": "MACHO"
@@ -586,17 +586,17 @@ role: str
 
 ### 📌 **Obtener todos los procedimientos de investigador por user_id**
 
-**GET** `/procedimientos/cuidador/{user_id}`
+**GET** `/procedure/keeper/{user_id}`
 
 #### **Response**
 
 ```json
 {
-  "id_procedimiento": "uuid",
-  "titulo": "Extracción de sangre",
-  "descripcion": "Toma de muestra para análisis genético",
-  "estado": "pendiente",
-  "specimen": {
+  "id": "uuid",
+  "title": "Extracción de sangre",
+  "description": "Toma de muestra para análisis genético",
+  "status": "pendiente",
+  "specimen": { // falta esto
     "id": "uuid",
     "species": "Raton",
     "sex": "MACHO"
@@ -606,21 +606,21 @@ role: str
 
 ---
 
-## **5️⃣ Solicitudes de Animales** `/solicitudes`
+## **5️⃣ Solicitudes de Animales** `/request`
 
 ### 📌 **Crear una solicitud de animales**
 
-**POST** `/solicitudes/`
+**POST** `/request/`
 
 #### **Request Body**
 
 ```json
 {
-  "titulo": "Nuevo especimen",
-  "descripcion": "Se requiere un nuevo especimen para realizar investigaciones",
-  "estado": "pendiente",
-  "investigador_id": "uuid",
-  "cuidador_id": "uuid"
+  "title": "Prueba",
+  "description": "Descripción de la prueba.",
+  "keeper_id": "550e8400-e29b-41d4-a716-446655440001",
+  "researcher_id": "550e8400-e29b-41d4-a716-446655440001",
+  "status": "Abierta"
 }
 ```
 
@@ -628,90 +628,98 @@ role: str
 
 ```json
 {
-  "id_solicitud": "uuid",
-  "titulo": "Extracción de sangre",
-  "descripcion": "Toma de muestra para análisis genético",
-  "estado": "pendiente",
-  "investigador_id": "uuid",
-  "cuidador_id": "uuid"
+    "title": "Prueba",
+    "description": "Descripción de la prueba.",
+    "researcher_id": "550e8400-e29b-41d4-a716-446655440001",
+    "keeper_id": "550e8400-e29b-41d4-a716-446655440001",
+    "status": "Abierta",
+    "id": "562e8482-b18f-4c71-adbe-8f9daa77291a"
 }
 ```
 
 ### 📌 **Obtener solicitudes de un investigador**
 
-**GET** `/solicitudes/investigador/{user_id}`
+**GET** `/request/researcher/{user_id}`
 
 #### **Response**
 
 ```json
 [
-  {
-    "id_solicitud": "uuid",
-    "titulo": "Nuevo especimen",
-    "descripcion": "Se requiere un nuevo especimen para realizar investigaciones",
-    "estado": "pendiente",
-    "cuidador": {
-      "id": "uuid",
-      "nombre": "Juan Pérez",
-      "rol": "cuidador"
+    {
+        "id": "880e8400-e29b-41d4-a716-777655440009",
+        "title": "Solicitud de traslado de espécimen",
+        "description": "Solicitud para trasladar un espécimen de jaguar a un hábitat de estudio.",
+        "keeper": {
+            "id": "550e8400-e29b-41d4-a716-446655440002",
+            "name": "María López",
+            "email": "maria@example.com",
+            "role": "cuidador",
+            "registration_date": "2025-02-28T13:22:08.766791"
+        },
+        "status": "Pendiente"
+    },
+    {
+        "id": "880e8400-e29b-41d4-a716-777655440002",
+        "title": "Solicitud de muestra biológica",
+        "description": "Solicitud de una muestra de sangre de tortuga marina para análisis genético.",
+        "keeper": {
+            "id": "550e8400-e29b-41d4-a716-446655440002",
+            "name": "María López",
+            "email": "maria@example.com",
+            "role": "cuidador",
+            "registration_date": "2025-02-28T13:22:08.766791"
+        },
+        "status": "Pendiente"
     }
-  },
-  {
-    "id_solicitud": "uuid",
-    "titulo": "Nuevo especimen",
-    "descripcion": "Se requiere un nuevo especimen para realizar investigaciones",
-    "estado": "pendiente",
-    "cuidador": {
-      "id": "uuid",
-      "nombre": "María López",
-      "rol": "cuidador"
-    }
-  }
 ]
 ```
 
 ### 📌 **Obtener solicitudes de un cuidador**
 
-**GET** `/solicitudes/cuidador/{user_id}`
+**GET** `/request/keeper/{user_id}`
 
 #### **Response**
 
 ```json
 [
-  {
-    "id_solicitud": "uuid",
-    "titulo": "Nuevo especimen",
-    "descripcion": "Se requiere un nuevo especimen para realizar investigaciones",
-    "estado": "pendiente",
-    "investigador": {
-      "id": "uuid",
-      "nombre": "Juan Pérez",
-      "rol": "cuidador"
+    {
+        "id": "880e8400-e29b-41d4-a716-777655440009",
+        "title": "Solicitud de traslado de espécimen",
+        "description": "Solicitud para trasladar un espécimen de jaguar a un hábitat de estudio.",
+        "researcher": {
+            "id": "550e8400-e29b-41d4-a716-446655440001",
+            "name": "Juan Pérez",
+            "email": "juan@example.com",
+            "role": "investigador",
+            "registration_date": "2025-02-28T13:22:08.766791"
+        },
+        "status": "Pendiente"
+    },
+    {
+        "id": "880e8400-e29b-41d4-a716-777655440002",
+        "title": "Solicitud de muestra biológica",
+        "description": "Solicitud de una muestra de sangre de tortuga marina para análisis genético.",
+        "researcher": {
+            "id": "550e8400-e29b-41d4-a716-446655440001",
+            "name": "Juan Pérez",
+            "email": "juan@example.com",
+            "role": "investigador",
+            "registration_date": "2025-02-28T13:22:08.766791"
+        },
+        "status": "Pendiente"
     }
-  },
-  {
-    "id_solicitud": "uuid",
-    "titulo": "Nuevo especimen",
-    "descripcion": "Se requiere un nuevo especimen para realizar investigaciones",
-    "estado": "pendiente",
-    "investigador": {
-      "id": "uuid",
-      "nombre": "María López",
-      "rol": "cuidador"
-    }
-  }
 ]
 ```
 
 ### 📌 **Actualizar estado de una solicitud**
 
-**PUT** `/solicitudes/{solicitud_id}`
+**PUT** `/request/{id}`
 
 #### **Request Body**
 
 ```json
 {
-  "estado": "Hecho"
+    "status": "Hecho"
 }
 ```
 
@@ -719,8 +727,7 @@ role: str
 
 ```json
 {
-  "id_solicitud": "uuid",
-  "estado": "Hecho"
+    "status": "Hecho"
 }
 ```
 
