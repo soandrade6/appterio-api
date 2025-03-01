@@ -732,20 +732,23 @@ role: str
 ```
 
 ---
-
 ## **6️⃣ Autenticación** `/auth`
 
 ### 📌 **Iniciar sesión**
 
-**POST** `/auth/login`
+**POST** `/auth/token`
 
 #### **Request Body**
 
-```json
-{
-  "email": "juan@example.com",
-  "contraseña": "password123"
-}
+El endpoint espera datos en formato `application/x-www-form-urlencoded` con los siguientes campos:
+
+- **username**: Correo electrónico del usuario.
+- **password**: Contraseña del usuario.
+
+Ejemplo de Request Body:
+
+```
+username=juan@example.com&password=password123
 ```
 
 #### **Response**
@@ -757,17 +760,11 @@ role: str
 }
 ```
 
-### 📌 **Obtener usuario autenticado**
+#### **Ejemplo cURL para iniciar sesión**
 
-**GET** `/auth/me`
-
-#### **Response**
-
-```json
-{
-  "id_usuario": "uuid",
-  "nombre": "Juan Pérez",
-  "email": "juan@example.com",
-  "rol": "cuidador"
-}
+```bash
+curl -X POST "http://localhost:8000/auth/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "username=juan@example.com&password=password123"
 ```
+

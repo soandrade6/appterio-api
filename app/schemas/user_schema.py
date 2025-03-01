@@ -31,3 +31,8 @@ class UserEdit(BaseModel):
     name: str
     email: EmailStr
     role: UserRole
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
