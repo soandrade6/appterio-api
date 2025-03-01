@@ -198,9 +198,9 @@ role: str
   "last_observations": "Se observa mayor actividad nocturna y una leve reducción en el consumo de alimento. Se continuará monitoreando para detectar posibles cambios en la salud.", // opcional
   "clinical_signs": "Estado general saludable. Se observó una pequeña pérdida de pelo en la zona dorsal, sin signos de infección.", // opcional
   "vaccines": "Rabia, Moquillo, Parvovirus", // opcional
-  "parent1Id": "1", // opcional
-  "parent2Id": "2", // opcional
-  "keeperId": "c89117c8-00cd-43e2-b163-008254e512e7" // opcional
+  "parent1_id": "1", // opcional
+  "parent2_id": "2", // opcional
+  "keeper_id": "c89117c8-00cd-43e2-b163-008254e512e7" // opcional
 }
 ```
 
@@ -438,14 +438,14 @@ role: str
 
 ```json
 {
-  "health_status": "CUIDADO",
-  "weight": 750,
-  "age": 10,
-  "diet": "Dieta controlada con base en pellets comerciales, con un refuerzo de proteínas mediante el suministro ocasional de insectos secos.",
-  "last_observations": "Se observa mayor actividad nocturna y una leve reducción en el consumo de alimento. Se continuará monitoreando para detectar posibles cambios en la salud.",
-  "clinical_signs": "Estado general saludable. Se observó una pequeña pérdida de pelo en la zona dorsal, sin signos de infección.",
-  "vaccines": "Rabia, Moquillo, Parvovirus",
-  "keeper_id": "uuid"
+  "health_status": "CUIDADO", //opcional
+  "weight": 750, //opcional
+  "age": 10, //opcional
+  "diet": "Dieta controlada con base en pellets comerciales, con un refuerzo de proteínas mediante el suministro ocasional de insectos secos.", //opcional
+  "last_observations": "Se observa mayor actividad nocturna y una leve reducción en el consumo de alimento. Se continuará monitoreando para detectar posibles cambios en la salud.", //opcional
+  "clinical_signs": "Estado general saludable. Se observó una pequeña pérdida de pelo en la zona dorsal, sin signos de infección.", //opcional
+  "vaccines": "Rabia, Moquillo, Parvovirus", //opcional
+  "keeper_id": "uuid" //opcional
 }
 ```
 
