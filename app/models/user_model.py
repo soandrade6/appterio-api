@@ -5,6 +5,7 @@ import uuid
 from sqlalchemy.sql import func
 from app.database import Base
 import enum
+from app.models.request_model import Request
 
 class UserRole(enum.Enum):
     cuidador = "cuidador"
@@ -24,3 +25,6 @@ class User(Base):
     animals = relationship("Animal", back_populates="keeper")
     researches = relationship("Research", back_populates="researcher")
     procedures = relationship("Procedure", back_populates="user")
+
+    requests_researcher = relationship("Request", foreign_keys=[Request.researcher_id], back_populates="researcher")
+    requests_keeper = relationship("Request", foreign_keys=[Request.keeper_id], back_populates="keeper")

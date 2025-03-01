@@ -27,3 +27,10 @@ INSERT INTO "research" (id, title, description, specimen_id, researcher_id, stat
 INSERT INTO "procedure" (id, title, description, specimen_id, user_id, status) VALUES
   ('880e8400-e29b-41d4-a716-777655440001', 'Vacunación anual', 'Aplicación de vacuna contra la rabia.', '660e8400-e29b-41d4-a716-556655440001', '550e8400-e29b-41d4-a716-446655440001', 'Pendiente'),
   ('880e8400-e29b-41d4-a716-777655440002', 'Control de peso', 'Monitoreo del peso del elefante Dumbo.', '660e8400-e29b-41d4-a716-556655440002', '550e8400-e29b-41d4-a716-446655440002', 'Pendiente');
+
+
+-- Insert Requests
+INSERT INTO "request" (id, title, description, researcher_id, keeper_id, status) VALUES
+  ('880e8400-e29b-41d4-a716-777655440009', 'Solicitud de traslado de espécimen', 'Solicitud para trasladar un espécimen de jaguar a un hábitat de estudio.', '550e8400-e29b-41d4-a716-446655440001', '550e8400-e29b-41d4-a716-446655440001', 'Pendiente'),
+  ('880e8400-e29b-41d4-a716-777655440002', 'Solicitud de muestra biológica', 'Solicitud de una muestra de sangre de tortuga marina para análisis genético.', '550e8400-e29b-41d4-a716-446655440001', '550e8400-e29b-41d4-a716-446655440002', 'Pendiente');
+

@@ -67,7 +67,7 @@ class AnimalDetailResponse(BaseModel):
     class Config:
         from_attributes = True
 
-
+    
 class AnimalFamilyResponse(BaseModel):
     parents: dict
     offspring: list[AnimalResponse]
