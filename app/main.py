@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.routes import animal_route, procedure_route, research_route, user_route, request_route, auth_route
 
 from app.database import engine, Base
@@ -6,6 +7,14 @@ from app.database import engine, Base
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Appterio API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Incluir aquí los routers
 app.include_router(user_route.router)
