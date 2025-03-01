@@ -192,6 +192,7 @@ role: str
   "health_status": "SALUDABLE",
   "weight": 750,
   "date_birth": "2024-02-05", // opcional
+  "age": 0,
   "origin": "nacimiento",
   "family": "356A",
   "diet": "Dieta controlada con base en pellets comerciales, con un refuerzo de proteínas mediante el suministro ocasional de insectos secos.", // opcional
@@ -254,29 +255,29 @@ role: str
   "researches": [
     {
       "id": "uuid",
-      "titulo": "Efectos de la dieta en la reproducción de ratones",
-      "descripcion": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
-      "estado": "Abierta"
+      "title": "Efectos de la dieta en la reproducción de ratones",
+      "desciption": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
+      "status": "Abierta"
     },
     {
       "id": "uuid",
-      "titulo": "Efectos de la dieta en la reproducción de ratones",
-      "descripcion": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
-      "estado": "Cerrada"
+      "title": "Efectos de la dieta en la reproducción de ratones",
+      "description": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
+      "status": "Cerrada"
     }
   ],
   "procedures": [
     {
       "id": "uuid",
-      "titulo": "Extracción de sangre",
-      "descripcion": "Toma de muestra para análisis genético",
-      "estado": "pendiente"
+      "title": "Extracción de sangre",
+      "desciption": "Toma de muestra para análisis genético",
+      "status": "pendiente"
     },
     {
       "id": "uuid",
-      "titulo": "Extracción de sangre",
-      "descripcion": "Toma de muestra para análisis genético",
-      "estado": "cerrado"
+      "title": "Extracción de sangre",
+      "description": "Toma de muestra para análisis genético",
+      "status": "cerrado"
     }
   ],
   "parent1_id": "uuid",
@@ -481,6 +482,7 @@ role: str
 
 ```json
 {
+  "id": "uuid",
   "title": "Efectos de la dieta en la reproducción de ratones",
   "description": "Se estudiará el efecto de la dieta en la reproducción de ratones, con el fin de determinar si la dieta influye en la cantidad de crías.",
   "specimen_id": "4a01ab95-32e4-4bde-94d0-8e687d1abb2d",
@@ -578,8 +580,10 @@ role: str
   "status": "pendiente",
   "specimen": { // Falta esto
     "id": "uuid",
-    "species": "Raton",
-    "sex": "MACHO"
+    "name": "Nala",
+    "sex": "HEMBRA",
+    "species": "Panthera leo",
+    "health_status": "CUIDADO"
   }
 }
 ```
@@ -599,7 +603,8 @@ role: str
   "specimen": { // falta esto
     "id": "uuid",
     "species": "Raton",
-    "sex": "MACHO"
+    "sex": "MACHO",
+    "health_status": "SALUDABLE"
   }
 }
 ```
@@ -615,26 +620,28 @@ role: str
 #### **Request Body**
 
 ```json
-{
-  "title": "Prueba",
-  "description": "Descripción de la prueba.",
-  "keeper_id": "550e8400-e29b-41d4-a716-446655440001",
-  "researcher_id": "550e8400-e29b-41d4-a716-446655440001",
-  "status": "Abierta"
-}
+
+  {
+    "title": "Solicitud de Acceso a León",
+    "description": "Requerimos acceso al espécimen Panthera leo para toma de muestras de sangre.",
+    "researcher_id": "de69c672-c670-4aab-8b59-5274aac84bd6",
+    "keeper_id": "37d4c36e-84e1-438c-b2ef-fbf527d52627",
+    "status": "Pendiente"
+  }
+
 ```
 
 #### **Response**
 
 ```json
 {
-    "title": "Prueba",
-    "description": "Descripción de la prueba.",
-    "researcher_id": "550e8400-e29b-41d4-a716-446655440001",
-    "keeper_id": "550e8400-e29b-41d4-a716-446655440001",
-    "status": "Abierta",
-    "id": "562e8482-b18f-4c71-adbe-8f9daa77291a"
-}
+    "title": "Solicitud de Acceso a León",
+    "description": "Requerimos acceso al espécimen Panthera leo para toma de muestras de sangre.",
+    "researcher_id": "de69c672-c670-4aab-8b59-5274aac84bd6",
+    "keeper_id": "37d4c36e-84e1-438c-b2ef-fbf527d52627",
+    "status": "Pendiente",
+    "id": "c2ae4cac-eb2f-4063-a6b2-1abf7b253ec7"
+  }
 ```
 
 ### 📌 **Obtener solicitudes de un investigador**
