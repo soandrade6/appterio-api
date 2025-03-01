@@ -26,7 +26,9 @@ def create_user(db: Session, data: UserCreate | UserEdit):
 def get_user(db: Session, id: uuid.UUID):
     return db.query(User).filter(User.id == id).first()
 
-
+def get_user_by_email(db: Session, email: str):
+    return db.query(User).filter(User.email == email).first()
+    
 def get_all_users(db: Session):
     return db.query(User).all()
 
