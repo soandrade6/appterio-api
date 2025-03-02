@@ -37,8 +37,8 @@ class Animal(Base):
     last_observations = relationship("LastObservations", back_populates="animal", uselist=False)
     clinical_signs = relationship("ClinicalSigns", back_populates="animal", uselist=False)
     vaccines = relationship("Vaccines", back_populates="animal", uselist=False)
-    parent1 = relationship("Animal", remote_side=[id], foreign_keys=[parent1_id])
-    parent2 = relationship("Animal", remote_side=[id], foreign_keys=[parent2_id])
+    parent1 = relationship("Animal", remote_side="Animal.id", foreign_keys="Animal.parent1_id")
+    parent2 = relationship("Animal", remote_side="Animal.id", foreign_keys="Animal.parent2_id")
     
     procedures = relationship("Procedure", back_populates="specimen")
     researches = relationship("Research", back_populates="specimen")

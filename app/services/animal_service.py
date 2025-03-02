@@ -222,11 +222,7 @@ def get_animal_family(db: Session, id: uuid.UUID):
         parent1 = animal.parent1 if animal.parent1_id else None
         parent2 = animal.parent2 if animal.parent2_id else None
 
-        offspring = (
-            db.query(Animal)
-            .filter((Animal.parent1_id == animal.id) | (Animal.parent2_id == animal.id))
-            .all()
-        )
+        offspring = db.query(Animal).filter((Animal.parent1_id == animal.id) | (Animal.parent2_id == animal.id)).all()
 
         return {
             "parents": {
