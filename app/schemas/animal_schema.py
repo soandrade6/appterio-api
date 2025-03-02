@@ -39,9 +39,9 @@ class AnimalCreate(BaseModel):
 
 class AnimalResponse(BaseModel):
     id: UUID
-    name: str
     sex: AnimalSex
     species: str
+    family: str
     health_status: AnimalStatus
 
     class Config:

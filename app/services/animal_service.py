@@ -6,8 +6,6 @@ from app.models.animal_model import Animal, AnimalStatus
 from app.models.detail_model import Diet, LastObservations, ClinicalSigns, Vaccines
 from app.models.research_model import Research
 from app.schemas.animal_schema import AnimalCreate, AnimalUpdate
-from app.schemas.procedure_schema import ProcedureResponse
-from app.schemas.research_schema import ResearchResponse
 from app.services.user_service import get_user
 from datetime import date
 import uuid
