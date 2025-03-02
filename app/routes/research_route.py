@@ -12,6 +12,6 @@ def create_new_research(research: ResearchCreate, db: Session = Depends(get_db))
     return new_research
 
 
-@router.put("/{animal_id}", response_model=ResearchUpdateStatus)
-def update_research(animal_id: str, update_data: ResearchUpdateStatus, db: Session = Depends(get_db)):
-    return update_research_status(db, animal_id, update_data.status)
+@router.put("/{id}", response_model=ResearchUpdateStatus)
+def update_research(id: str, update_data: ResearchUpdateStatus, db: Session = Depends(get_db)):
+    return update_research_status(db, id, update_data.status)

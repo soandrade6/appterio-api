@@ -15,11 +15,11 @@ def create_research(db: Session, data: ResearchCreate):
         db.rollback()  
         raise HTTPException(status_code=500, detail=f"Error al crear el la investigación: {str(e)}")
     
-def update_research_status(db: Session, animal_id: str, status: str):
+def update_research_status(db: Session, id: str, status: str):
     try:
-        research = db.query(Research).filter(Research.specimen_id == animal_id).first()
+        research = db.query(Research).filter(Research.id == id).first()
         if not research:
-            raise HTTPException(status_code=404, detail="Investigación no encontrada para el animal especificado")
+            raise HTTPException(status_code=404, detail="No se encontraron investigaciones")
         research.status = status
         db.commit()
         db.refresh(research)
