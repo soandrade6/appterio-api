@@ -229,9 +229,9 @@ def get_animal_family(db: Session, id: uuid.UUID):
                 "parent1": (
                     {
                         "id": parent1.id,
-                        "name": parent1.name,
                         "species": parent1.species,
                         "sex": parent1.sex.name,
+                        "family": parent1.family,
                         "health_status": parent1.health_status.name,
                     }
                     if parent1
@@ -240,9 +240,9 @@ def get_animal_family(db: Session, id: uuid.UUID):
                 "parent2": (
                     {
                         "id": parent2.id,
-                        "name": parent2.name,
                         "species": parent2.species,
                         "sex": parent2.sex.name,
+                        "family": parent2.family,
                         "health_status": parent2.health_status.name,
                     }
                     if parent2
@@ -252,8 +252,8 @@ def get_animal_family(db: Session, id: uuid.UUID):
             "offspring": [
                 {
                     "id": young.id,
-                    "name": young.name,
                     "species": young.species,
+                    "family": young.family,
                     "sex": young.sex.name,
                     "health_status": young.health_status.name,
                 }
